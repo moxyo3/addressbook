@@ -163,7 +163,7 @@
                 <div class="form-group">
                     <input type="hidden" name="id" value="{{ $item->id }}">
                 </div>
-                <input type="submit" class="btn btn-outline-danger" value="削除">
+                <input type="submit" class="btn btn-outline-danger" value="削除" name="delete">
             </form>
 
             @endif
