@@ -158,12 +158,12 @@
                 </ul>
             </form>
 
-            <form action="{{ url('/delete') }}" method="POST">
+            <form action="{{ url('/delete') }}" method="POST" id="delete">
                 @csrf
                 <div class="form-group">
                     <input type="hidden" name="id" value="{{ $item->id }}">
                 </div>
-                <input type="submit" class="btn btn-outline-danger" value="削除" name="delete">
+                <input type="submit" class="btn btn-outline-danger" value="削除">
             </form>
 
             @endif
