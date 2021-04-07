@@ -17,6 +17,7 @@
         <table class="address-table">
             <th></th>
             <th>氏名</th>
+            <th>ふりがな</th>
             <th>郵便番号</th>
             <th>住所1</th>
             <th>住所2</th>
@@ -30,7 +31,8 @@
                         <button type="button" class="btn btn-outline-secondary btn-sm">編集</button>
                         </a>
                     </td>
-                    <td width="200">{{ $item -> family_name }} {{ $item -> first_name }}</td>
+                    <td width="160">{{ $item -> family_name }} {{ $item -> first_name }}</td>
+                    <td width="160">{{ $item -> kana_family }} {{ $item -> kana_name }}</td>
                     <td width="100">{{ $item -> post_num }}</td>
                     <td>{{ $item -> address1 }}</td>
                     <td>{{ $item -> address2 }}</td>

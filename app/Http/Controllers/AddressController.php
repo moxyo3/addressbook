@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests\EditformRequest;
+
 use App\Models\AddressData;
 use App\Logics\AddressLogic;
 
@@ -19,18 +21,20 @@ class AddressController extends Controller {
         return view('address.edit', ['is_registration'=>$is_registration]);
     }
 
-    public function addAddress(Request $request) {
+    public function addAddress(EditformRequest $request) {
         $address = new AddressData;
 
         $address->family_name = $request->family_name;
         $address->first_name = $request->first_name;
-        $address->kana_family = $request->kana_name;
+        $address->kana_family = $request->kana_family;
+        $address->kana_name = $request->kana_name;
         $address->post_num = $request->post_num;
         $address->address1 = $request->address1;
         $address->address2 = $request->address2;
         $address->mail_address = $request->mail_address;
         $address->phone_num = $request->phone_num;
         $address->memo = $request->memo;
+
         $address->save();
 
         return redirect('/');
@@ -42,7 +46,7 @@ class AddressController extends Controller {
         return view('address.edit' ,['item'=>$item, 'is_registration'=>$is_registration]);
     }
 
-    public function update(Request $request) {
+    public function update(editformRequest $request) {
         $address = AddressData::find($request->id);
 
         $form = $request->all();

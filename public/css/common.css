@@ -32,6 +32,10 @@ div.contents-wrapper {
     margin: 10px;
 }
 
+div.contents {
+    font-size: medium;
+}
+
 .address-table {
     margin-top: 5px;
 }
@@ -85,4 +89,22 @@ div.message {
     height: 80px;
     display: inline;
     margin: 0 0 10px 10px;
+}
+
+span.error-message{
+    font-size: small;
+    color: red;
+}
+
+div.edit-form ul li {
+    list-style: none;;
+}
+
+div.edit-form label {
+    width: 130px;
+    float: left;
+}
+
+div.edit-form ul {
+    padding-inline-start: 0;
 }
