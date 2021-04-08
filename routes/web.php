@@ -22,7 +22,6 @@ Auth::routes();
 //Login
 //Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/create', 'AddressController@createPage');
 Route::post('/addAddress', 'AddressController@addAddress');
 Route::get('/edit/id='. '{id}', 'AddressController@edit');
 Route::post('/update', 'AddressController@update');

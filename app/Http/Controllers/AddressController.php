@@ -16,11 +16,6 @@ class AddressController extends Controller {
         return view('address.main', ['items' => $items]);
     }
 
-    public function createPage() {
-        $is_registration = true;
-        return view('address.edit', ['is_registration'=>$is_registration]);
-    }
-
     public function addAddress(EditformRequest $request) {
         $address = new AddressData;
 
@@ -41,9 +36,8 @@ class AddressController extends Controller {
     }
 
     public function edit($id) {
-        $is_registration = false;
         $item = AddressData::find($id);
-        return view('address.edit' ,['item'=>$item, 'is_registration'=>$is_registration]);
+        return view('address.edit' ,['item'=>$item]);
     }
 
     public function update(editformRequest $request) {

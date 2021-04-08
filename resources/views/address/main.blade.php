@@ -6,11 +6,10 @@
 @endsection
 
 @section('contents')
-    <div>
-        <a href="{{ url('/create') }}">
-        <button type="button" class="btn btn-secondary">＋ 作成</button>
-        </a>
+    <div class="modal-open">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-modal">＋　作成</button>
     </div>
+
     <br>
 
     <div class="address-table">
@@ -31,9 +30,9 @@
                         <button type="button" class="btn btn-outline-secondary btn-sm">編集</button>
                         </a>
                     </td>
-                    <td width="160">{{ $item -> family_name }} {{ $item -> first_name }}</td>
-                    <td width="160">{{ $item -> kana_family }} {{ $item -> kana_name }}</td>
-                    <td width="100">{{ $item -> post_num }}</td>
+                    <td>{{ $item -> family_name }} {{ $item -> first_name }}</td>
+                    <td>{{ $item -> kana_family }} {{ $item -> kana_name }}</td>
+                    <td>{{ $item -> post_num }}</td>
                     <td>{{ $item -> address1 }}</td>
                     <td>{{ $item -> address2 }}</td>
                     <td>{{ $item -> phone_num }}</td>
@@ -43,6 +42,10 @@
             @endforeach
         </table>
     </div>
+
+@component('components.createmodal')
+@endcomponent
+
 @endsection
 
 @section('js')
